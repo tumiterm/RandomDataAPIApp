@@ -9,7 +9,7 @@ namespace Utilities.dll.Contract
 {
     public interface IUserContext
     {
-        Task<HttpResponseMessage> SendGetRequestAsync(string url, int size = 2);
+        Task<HttpResponseMessage> SendGetRequestAsync(string url, int size = 12);
         Task<HttpResponseMessage> SendGetRequestBySizeAsync(string url,int size = 2);
     }
 }

@@ -27,14 +27,12 @@ namespace RandomDataAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetUserList")]
+        [HttpGet]
         public async Task<ActionResult<UserDTO>> GetAsync()
         {
             try
             {
-                string baseUri = $"{_configuration["APIConfigs:BaseUrl"]}?size=8";
-
-                HttpResponseMessage response = await _apiHelper.SendGetRequestAsync(baseUri);
+                HttpResponseMessage response = await _apiHelper.SendGetRequestAsync(_configuration["APIConfigs:BaseUrl"]);
 
                 if (response.IsSuccessStatusCode)
                 {

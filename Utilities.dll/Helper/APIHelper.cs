@@ -20,7 +20,7 @@ namespace Utilities.dll.Helper
 
         }
 
-        public async Task<HttpResponseMessage> SendGetRequestAsync(string baseUrl, int size = 2)
+        public async Task<HttpResponseMessage> SendGetRequestAsync(string baseUrl, int size = 12)
         {
             if (string.IsNullOrWhiteSpace(baseUrl))
             {
@@ -29,7 +29,7 @@ namespace Utilities.dll.Helper
 
             try
             {
-                string url = $"{baseUrl}/size = {size}";
+                string url = $"{baseUrl}/size={size}";
 
                 return await _client.GetAsync(url);
             }
